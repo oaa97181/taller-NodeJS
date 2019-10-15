@@ -1,2 +1,3 @@
 # taller-NodeJS
-taller (:
+
+built a pokedex w/ JS, middleware and DB

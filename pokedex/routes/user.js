@@ -19,5 +19,28 @@ user.post("/", (req,res) =>{
 	});
 })
 
+user.post("/login", (req,res) =>{
+
+	const mail= req.body.mail;
+	const pass= req.body.pass;
+
+	query="SELECT * FROM user WHERE "
+	query += `user_mail='${mail}' AND user_password= '${pass}';`
+
+		db.query(query).then(rows=> {
+			res.status(200)
+			if (rows.length==1) {
+				res.json({code:0, message: "Bienvenido, login exitoso!"})
+			}else {
+				res.json({code:1, message: "Usuario no encontrado"})	
+			}
+	}).catch(err => {
+		console.log(err);
+		res.status(500);
+		res.send("Algo salió mal con el login");
+	});	
+
+})
+
 module.exports=user
 

@@ -8,6 +8,25 @@ function init() {
 }
 
 function login(){
-    var user = document.getElementById("input-mail").value;
+    var mail = document.getElementById("input-mail").value;
     var pass = document.getElementById("input-password").value;
+
+    		axios({
+		  method: 'post',
+		  url: 'http://localhost:3000/user/login',
+		  data: {
+		    pass:pass,
+		    mail:mail
+		  }
+		}).then(res => {
+			if(res.data.code==0){
+				console.log(res.data.message)
+				window.location.href="pokemon.html"
+			}else if (res.data.code==1){
+				alert("Usuario y/o contraseña incorrectos")
+			}
+		}).catch(err=>{
+			console.log(err)
+		});
+
 }

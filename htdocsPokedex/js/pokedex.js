@@ -1,15 +1,20 @@
-window.onload = loadPokemon;
+window.onload = init;
+
+function init (){
+    if(localStorage.getItem("token")){
+
+    }else {
+        window.location.href="index.html"
+    }
+    loadPokemon()
+}
 
 function loadPokemon() {
-    var pokemonRequest = new XMLHttpRequest();
-    pokemonRequest.onreadystatechange = function () {
-        if(this.readyState == 4 && this.status == 200) {
-            var pokemon = JSON.parse(this.responseText);
-            displayPokemon(pokemon);
-        }
-    }
-    pokemonRequest.open("GET", "http://localhost:3000/pokemon");
-    pokemonRequest.send();
+axios.get("http://localhost:3000/pokemon").then(res => {
+    console.log(res)
+}).catch(err => {
+    console.log(err)
+})
 }
 
 function displayPokemon(pokemon) {

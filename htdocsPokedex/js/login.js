@@ -20,7 +20,8 @@ function login(){
 		  }
 		}).then(res => {
 			if(res.data.code==0){
-				console.log(res.data.message)
+				console.log(res.data)
+				localStorage.setItem("token", res.data.message)
 				window.location.href="pokemon.html"
 			}else if (res.data.code==1){
 				alert("Usuario y/o contraseña incorrectos")

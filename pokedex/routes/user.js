@@ -1,5 +1,6 @@
 const db=require('../config/database')
 const express=require('express')
+const jwt=require('jsonwebtoken')
 const user = express.Router()
 
 user.post("/", (req,res) =>{
@@ -30,7 +31,11 @@ user.post("/login", (req,res) =>{
 		db.query(query).then(rows=> {
 			res.status(200)
 			if (rows.length==1) {
-				res.json({code:0, message: "Bienvenido, login exitoso!"})
+				const token= jwt.sign({
+					id:rows[0].user_id,
+					mail:rows[0].user_mail
+				}, "debugkey")
+				res.json({code:0, message: token})
 			}else {
 				res.json({code:1, message: "Usuario no encontrado"})	
 			}

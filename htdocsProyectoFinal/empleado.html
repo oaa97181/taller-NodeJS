@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Taller de Node.js S.A. de C.V.</title>
+
+	<link rel="stylesheet" href="assets/header-basic.css">
+	<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/empleado.js" defer></script>
+</head>
+<body>
+    
+
+    <header class="header-basic">
+
+			<div class="header-limiter">
+
+				<h1><a href="#">Taller de Node.js    <span>S.A. de C.V.</span></a></h1>
+
+				<nav>
+					<a href="#" class="selected">Agregar</a>
+					<a href="Modificar.html">Modificar</a>
+					<a href="Eliminar.html">Eliminar</a>
+					<a href="buscar.html">Buscar</a>
+				</nav>
+			</div>
+
+		</header>
+
+		<!-- The content of your page would go here. -->
+
+
+		<div class="menu">
+			<h1>AGREGAR</h1>
+
+<form method="POST">
+	  <p>
+    <label>Nombre: 
+    <input name="Nombre" type="text" id="Nombre" required/>
+    </label>
+  </p>
+
+  	  <p>
+    <label>Apellidos: 
+    <input name="Apellidos" type="text" id="Apellidos" required/>
+    </label>
+  </p>
+
+  	  <p>
+    <label>Telefono: 
+    <input name="Telefono" type="text" id="Telefono" required/>
+    </label>
+  </p>
+
+  	  <p>
+    <label>Mail: 
+    <input name="Mail" type="text" id="Mail" required/>
+    </label>
+  </p>
+
+  	  <p>
+    <label>Direccion: 
+    <input name="Direccion" type="text" id="Direccion"  size="35" required/>
+    </label>
+  </p>
+   <button class="btn btn-primary" type="submit" value="submit" href="empleado.html">Enviar</button>
+</form>
+
+<br><br><br>
+
+		</div>
+
+</body>
+</html>
+

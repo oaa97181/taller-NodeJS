@@ -34,22 +34,66 @@
 		<!-- The content of your page would go here. -->
 
 
-		<div class="menu">
-			<h1>MODIFICAR</h1>
+		<div class="menu" style="float: left; width: 50%; height: 40%">
+			<h1>BUSCAR</h1>
 
-<FORM>
+<form id="form1" action="#">
 	  <p>
     <label>Nombre: 
     <input name="Nombre" type="text" id="Nombre" required/>
     </label>
   </p>
-</FORM>
 
-<br><br><br>
+          	  <p>
+          <label>Apellidos: 
+          <input name="Apellidos" type="text" id="Apellidos" required/>
+          </label>
+        </p>
 
-<p>NOMBRE DE EMPLEADOS TRAIDA DESDE EXPRESS</p>
+        <input class="btn btn-primary" type="submit" value="Enviar">
+</form>
+
+
 
 		</div>
+
+			<div class="menu" style="float: left; width: 50%; height: 40%">
+				<H1>MODIFICAR</H1>
+				<div>
+				      <form  id="form2" action="#">
+				      	  <p>
+				          <label>Nombre: 
+				          <input name="Nombre" type="text" id="Nombre2" required/>
+				          </label>
+				        </p>
+
+				        	  <p>
+				          <label>Apellidos: 
+				          <input name="Apellidos" type="text" id="Apellidos2" required/>
+				          </label>
+				        </p>
+
+				        	  <p>
+				          <label>Telefono: 
+				          <input name="Telefono" type="text" id="Telefono" required/>
+				          </label>
+				        </p>
+
+				        	  <p>
+				          <label>Mail: 
+				          <input name="Mail" type="text" id="Mail" required/>
+				          </label>
+				        </p>
+
+				        	  <p>
+				          <label>Direccion: 
+				          <input name="Direccion" type="text" id="Direccion"  size="35" required/>
+				          </label>
+				        </p>
+				         <input class="btn btn-primary" type="submit" value="Enviar">
+				      </form>
+				      </div>
+			</div>
 
 </body>
 </html>

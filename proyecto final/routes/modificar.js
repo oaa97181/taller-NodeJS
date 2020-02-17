@@ -14,7 +14,7 @@ empleadorouter.post("/", (req, res) => {
 	}).catch(err => {
 		console.log(err);
 		res.status(500);
-		res.send("Algo salió mal con BUSCAR empleados");
+		res.send("Algo salió mal con UPDATE empleados");
 	});
 });
 

@@ -35,7 +35,7 @@ function buscarEmpleado(event) {
             apellidos:apellidos
         }
     }).then(res => {
-        clearFields(res.data)
+        clearFields1(res.data)
              if(res.data.code==0){
             }else if (res.data.code==1){
                 alert("ALGO SALIO MAL CON BUSQUEDA EMPLEADO")
@@ -46,7 +46,19 @@ function buscarEmpleado(event) {
     return false;
 }
 
-function clearFields(empleado){
+function clearFields2(empleado){
+    var body = document.querySelector("body");
+
+    document.getElementById("Nombre2").value=""
+     document.getElementById("Apellidos2").value=""
+     document.getElementById("Telefono").value=""
+     document.getElementById("Mail").value=""
+     document.getElementById("Direccion").value=""
+
+}
+
+
+function clearFields1(empleado){
     var body = document.querySelector("body");
     for (var i = 0; i < empleado.length; i++) {
         body.innerHTML += " <h3> RESULTADOS DE LA BUSQUEDA </h3>";
@@ -58,7 +70,6 @@ function clearFields(empleado){
     }
     document.getElementById("Nombre").value=""
      document.getElementById("Apellidos").value=""
-
 }
 
 
@@ -85,11 +96,11 @@ function modificarEmpleado(event) {
             direccion:direccion
         }
     }).then(res => {
-        clearFields(res.data)
+        clearFields2(res.data)
         alert("UPDATE exitoso!")
              if(res.data.code==0){
             }else if (res.data.code==1){
-                alert("ALGO SALIO MAL CON BUSQUEDA EMPLEADO")
+                alert("ALGO SALIO MAL CON UPDATE EMPLEADO")
             }
     }).catch(err => {
         console.log(err)
